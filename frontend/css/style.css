@@ -34,7 +34,10 @@ form {
   gap: 0.75rem;
 }
 
-input, textarea, select, button {
+input,
+textarea,
+select,
+button {
   width: 100%;
   padding: 0.75rem;
   font: inherit;
@@ -50,4 +53,28 @@ input, textarea, select, button {
   .container {
     grid-template-columns: 1fr;
   }
+}
+#issues-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.issue-card button {
+  margin-top: 0.75rem;
+}
+
+#form-message {
+  min-height: 1.25rem;
+  font-weight: 600;
+}
+#issues-list {
+  display: grid;
+  gap: 1rem;
+}
+.issue-card button {
+  margin-top: 0.75rem;
+}
+#form-message {
+  min-height: 1.25rem;
+  font-weight: 600;
 }
