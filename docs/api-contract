@@ -1,0 +1,85 @@
+# API Contract: Issues API
+
+## Data Dictionary: Issue
+## Contract 1: View All Issues
+* **Request:** `GET /api/issues`
+* **Request body:** None
+* **Successful response:** `200 OK` with a JSON array:
+```json
+
+[
+  {
+    "id": "ISS-101",
+    "title": "Unable to access Wi-Fi",
+    "description": "Connection fails in the teaching lab.",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-09-15T12:30:00.000Z"
+  }
+]
+#### 2. The Implementation (in `backend/services/issueService.js`)
+Write the `readIssues()` function that reads from the JSON data store:
+
+```javascript
+async function readIssues() {
+  try {
+    const text = await fs.readFile(DATA_FILE, 'utf8');
+    return JSON.parse(text);
+  } catch (error) {
+    if (error.code === 'ENOENT') return [];
+    throw error;
+  }
+}
+## Contract 2: Create an Issue
+* **Request:** `POST /api/issues`
+* **Header:** `Content-Type: application/json`
+* **Request body (client-owned fields only):**
+```json
+{
+  "title": "Projector not detected",
+  "description": "Laptop cannot detect the classroom projector.",
+  "priority": "Medium"
+}
+{
+  "id": "ISS-102",
+  "title": "Projector not detected",
+  "description": "Laptop cannot detect the classroom projector.",
+  "priority": "Medium",
+  "status": "Open",
+  "createdAt": "2026-09-15T12:35:00.000Z"
+}
+## Contract 3: Change Issue Status
+* **Request:** `PATCH /api/issues/{id}/status`
+* **Header:** `Content-Type: application/json`
+* **Request body:**
+```json
+{
+  "status": "Resolved"
+}
+{
+  "id": "ISS-101",
+  "title": "Unable to access Wi-Fi",
+  "description": "Connection fails in the teaching lab.",
+  "priority": "High",
+  "status": "Resolved",
+  "createdAt": "2026-09-15T12:30:00.000Z"
+}
+
+| Field | Type | Source | Rule |
+|---|---|---|---|
+| id | string | Server | Required in stored/returned resource; unique; immutable. |
+| title | string | Client | Required; trim whitespace; 3-100 characters. |
+| description | string | Client | Required; trim whitespace; 5-500 characters. |
+| priority | string enum | Client | One of: Low, Medium, High. |
+| status | string enum | Server / controlled update | Open or Resolved. New issues start as Open. |
+| createdAt | string (ISO 8601) | Server | Created when the issue is accepted; immutable. |
+
+```json
+{
+  "id": "ISS-101",
+  "title": "Unable to access Wi-Fi",
+  "description": "Connection fails in the teaching lab.",
+  "priority": "High",
+  "status": "Open",
+  "createdAt": "2026-09-15T12:30:00.000Z"
+}

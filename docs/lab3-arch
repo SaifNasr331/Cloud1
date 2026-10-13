@@ -1,0 +1,22 @@
+# Lab 3: Cloud Issue Tracker Architecture
+
+## 1. Application Goal
+To transition the Cloud Issue Tracker into a structured three-layer architecture separating client presentation, REST routing/validation, and persistent data storage.
+
+## 2. Functional Scope
+1. Create an issue.
+2. View all issues.
+3. Change an issue status.
+
+## 3. Request Flow
+
+### CREATE ISSUE
+User -> Frontend form -> POST /api/issues -> API validation -> Data layer -> Render created issue (201 Created + JSON)
+
+### VIEW ISSUES
+Page load -> GET /api/issues -> API -> Data layer -> Render list (200 OK + JSON array)
+
+### CHANGE STATUS
+Button -> PATCH /api/issues/{id}/status -> API validation -> Data layer -> Re-render issue (200 OK + updated JSON)
+
+## 4. Trust Boundaries
