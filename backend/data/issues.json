@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ISS-101",
+    "title": "Unable to access Wi-Fi",
+    "description": "Connection fails in the teaching lab.",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-09-01T09:00:00.000Z"
+  },
+  {
+    "id": "ISS-102",
+    "title": "Projector not detected",
+    "description": "Laptop cannot detect the classroom projector.",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-09-01T09:05:00.000Z"
+  },
+  {
+    "id": "1a44f2b7-c396-4209-a72f-3579a6137f11",
+    "title": "Monitor flickering",
+    "description": "Display intermittently flickers during meetings.",
+    "priority": "High",
+    "status": "Resolved",
+    "createdAt": "2026-10-20T16:24:23.403Z"
+  },
+  {
+    "id": "f6d49102-69f0-4582-a251-d733de092033",
+    "title": "Monitor flickering",
+    "description": "Display intermittently flickers during meetings.",
+    "priority": "High",
+    "status": "Resolved",
+    "createdAt": "2026-10-20T16:24:52.391Z"
+  },
+  {
+    "id": "af129190-ddd6-4cec-a551-ad433e751f09",
+    "title": "Monitor flickering",
+    "description": "Display intermittently flickers during meetings.",
+    "priority": "High",
+    "status": "Resolved",
+    "createdAt": "2026-10-20T16:29:15.337Z"
+  },
+  {
+    "id": "df518b4d-d61c-4df7-837e-8201742e81c1",
+    "title": "Monitor flickering",
+    "description": "Display intermittently flickers during meetings.",
+    "priority": "High",
+    "status": "Resolved",
+    "createdAt": "2026-10-20T16:50:03.903Z"
+  },
+  {
+    "id": "d61915ad-9ff9-402b-a581-eec2b29309c7",
+    "title": "Monitor flickering",
+    "description": "Display intermittently flickers during meetings.",
+    "priority": "High",
+    "status": "Resolved",
+    "createdAt": "2026-10-20T16:53:33.262Z"
+  }
+]

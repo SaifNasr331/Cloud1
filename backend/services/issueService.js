@@ -15,6 +15,7 @@ async function readIssues() {
 }
 
 async function writeIssues(issues) {
+  await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
   await fs.writeFile(DATA_FILE, JSON.stringify(issues, null, 2));
 }
 

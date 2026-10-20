@@ -8,6 +8,13 @@ test('api exposes issue endpoints', async () => {
   const baseUrl = `http://127.0.0.1:${server.address().port}`;
 
   try {
+    const pageResponse = await fetch(`${baseUrl}/`);
+    assert.equal(pageResponse.status, 200);
+    assert.match(await pageResponse.text(), /Cloud Issue Tracker/);
+
+    const apiResponse = await fetch(`${baseUrl}/api`);
+    assert.equal(apiResponse.status, 200);
+
     const listResponse = await fetch(`${baseUrl}/api/issues`);
     assert.equal(listResponse.status, 200);
 
